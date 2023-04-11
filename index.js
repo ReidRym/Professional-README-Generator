@@ -14,6 +14,17 @@ const questions = [
         name: "description",
         message: "What does your application do?"
     },
+    {
+        type: "input",
+        name: "installation",
+        message: "include install instructions?"
+    }, 
+    {
+        type: "list",
+        name: "license",
+        message: "what license?",
+        choices: ["MIT", "Apache", "GPL", "BSD", "None"]
+    },   
 ];
 
 
