@@ -12,12 +12,12 @@ const questions = [
     {
         type: "input",
         name: "description",
-        message: "What does your application do?"
+        message: "Please provide a description of your project?"
     },
     {
         type: "input",
         name: "installation",
-        message: "include install instructions?"
+        message: "Please include complete install instructions?"
     }, 
     {
         type: "list",
