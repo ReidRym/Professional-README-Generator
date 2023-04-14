@@ -85,14 +85,27 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {
-  inquirer.prompt(questions).then(data => {
-    console.log(data);
-    fs.writeFileSync("README.md", generateMarkdown(data));
-  });
-}
-// Function call to initialize app
-init();
+function writeToFile(fileName, data) {
+    
+    if (data.tableOfContents) {
+      let toc = '## Table of Contents\n\n';
+      data.tableOfContentsItems.forEach(item => {
+        toc += `* [${item.toUpperCase()}](#${item})\n`;
+      });
+  
+      data.tableOfContents = toc;
+    }
+  
+    fs.writeFileSync(fileName, generateMarkdown(data));
+  }
+  
+  // TODO: Create a function to initialize app
+  function init() {
+    inquirer.prompt(questions).then(data => {
+      console.log(data);
+      writeToFile("README.md", data);
+    });
+  }
+  
+  // Function call to initialize app
+  init();
