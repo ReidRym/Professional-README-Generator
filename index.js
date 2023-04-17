@@ -65,17 +65,40 @@ const questions = [
     when: function (response) {
       return !response.tableOfContents;
     },
+    
     type: "confirm",
     name: "skipTableOfContents",
     message: "Do you want to skip creating a Table of Contents?",
-    default: true,
-  },
+    },
 
   {
     type: "input",
     name: "installation",
-    message: "Please include complete install instructions?",
+    message: "Please include step by step instructions to install your project?",
   },
+  {
+    type: "input",
+    name: "Usage",
+    message: " Please provide detailed instructions on how the user will use your project or application?",
+  },
+  {
+  type: "confirm",
+  name: "Usage",
+  message: 
+  "Do you need help adding a screenshot to your Mark Down Tutorial?",
+  default: true,
+  
+},
+{
+when: function (response) {
+  return !response.Usage;
+},
+},
+{
+  type: "input",
+  name: "Usage",
+  message: "Yes, of course! Here is a helpful link that will provide step-by-step instructions on how to add a screenshot for your Mark Down Tutorial: https://www.wikihow.com/Add-a-Screenshot-to-a-Markdown-File?",
+},
   {
     type: "list",
     name: "license",
