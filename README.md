@@ -1,59 +1,51 @@
-# dode
-
-
+#
 
 ## Description
-dslclsc
 
 ## Table of Contents
+
 false
 
-
-
-
 ## Installation
-dsfsdfsd
 
+fds
 
 ## Usage
-undefined
 
+fsfsdf
 
 ## license
+
 MIT
 
-
 ## Contributing
+
 undefined
 
+## Tests
 
-## Tests  
 undefined
-
 
 ## Questions
-undefined
 
+undefined
 
 ## Contact
-undefined
 
+undefined
 
 ## GitHub
-undefined
 
+undefined
 
 ## Email
-undefined
 
+undefined
 
 ## Credits
-undefined
 
+undefined
 
 ## Badges
+
 undefined
-
-
-
-

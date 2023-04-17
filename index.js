@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+
 const generateMarkdown = require("./utils/generateMarkdown");
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -65,40 +65,51 @@ const questions = [
     when: function (response) {
       return !response.tableOfContents;
     },
-    
+
     type: "confirm",
     name: "skipTableOfContents",
     message: "Do you want to skip creating a Table of Contents?",
-    },
+  },
 
   {
     type: "input",
     name: "installation",
-    message: "Please include step by step instructions to install your project?",
+    message:
+      "Please include step by step instructions to install your project?",
   },
   {
     type: "input",
-    name: "Usage",
-    message: " Please provide detailed instructions on how the user will use your project or application?",
+    name: "usage",
+    message:
+      "What steps should the user follow to use your project or application?",
   },
   {
-  type: "confirm",
-  name: "Usage",
-  message: 
-  "Do you need help adding a screenshot to your Mark Down Tutorial?",
-  default: true,
-  
-},
-{
-when: function (response) {
-  return !response.Usage;
-},
-},
-{
-  type: "input",
-  name: "Usage",
-  message: "Yes, of course! Here is a helpful link that will provide step-by-step instructions on how to add a screenshot for your Mark Down Tutorial: https://www.wikihow.com/Add-a-Screenshot-to-a-Markdown-File?",
-},
+    type: "confirm",
+    name: "screenshot",
+    message: "Do you need help adding a screenshot to your Mark Down Tutorial?",
+    default: true,
+  },
+  {
+    when: function (response) {
+      return response.screenshot;
+    },
+
+    type: "input",
+    name: "screenshotHelp",
+    message:
+      "Yes, of course! Here is a helpful link that will provide step-by-step instructions on how to add a screenshot for your Mark Down Tutorial: https://www.wikihow.com/Add-a-Screenshot-to-a-Markdown-File?",
+  },
+
+  {
+    when: function (response) {
+      return !response.tableOfContents;
+    },
+
+    type: "confirm",
+    name: "skipScreenshot",
+    // message:
+    //   "Do you want to skip adding a screenshot to your Mark Down Tutorial?",
+  },
   {
     type: "list",
     name: "license",
@@ -109,26 +120,25 @@ when: function (response) {
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    
-    if (data.tableOfContents) {
-      let toc = '## Table of Contents\n\n';
-      data.tableOfContentsItems.forEach(item => {
-        toc += `* [${item.toUpperCase()}](#${item})\n`;
-      });
-  
-      data.tableOfContents = toc;
-    }
-  
-    fs.writeFileSync(fileName, generateMarkdown(data));
-  }
-  
-  // TODO: Create a function to initialize app
-  function init() {
-    inquirer.prompt(questions).then(data => {
-      console.log(data);
-      writeToFile("README.md", data);
+  if (data.tableOfContents) {
+    let toc = "## Table of Contents\n\n";
+    data.tableOfContentsItems.forEach(item => {
+      toc += `* [${item.toUpperCase()}](#${item})\n`;
     });
+
+    data.tableOfContents = toc;
   }
-  
-  // Function call to initialize app
-  init();
+
+  fs.writeFileSync(fileName, generateMarkdown(data));
+}
+
+// TODO: Create a function to initialize app
+function init() {
+  inquirer.prompt(questions).then(data => {
+    console.log(data);
+    writeToFile("README.md", data);
+  });
+}
+
+// Function call to initialize app
+init();
