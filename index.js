@@ -1,4 +1,3 @@
-
 const generateMarkdown = require("./utils/generateMarkdown");
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -9,21 +8,28 @@ const questions = [
     type: "input",
     name: "title",
     message: "What is the name of your project? (Required)",
-    verify: nameInput => nameInput ? true : console.log('Please enter your project title.') && false
+    verify: nameInput =>
+      nameInput
+        ? true
+        : console.log("Please enter your project title.") && false,
   },
   {
     type: "input",
     name: "description",
-    message: "Please provide a detailed description of your project? (Required)",
-    verify: descriptionInput => descriptionInput ? true : console.log('Please enter your project description.') && false
+    message:
+      "Please provide a detailed description of your project? (Required)",
+    verify: descriptionInput =>
+      descriptionInput
+        ? true
+        : console.log("Please enter your project description.") && false,
   },
   {
     type: "confirm",
     name: "tableOfContents",
     message: "Do you want to create a table of contents for your project?",
     default: true,
-    verify: descriptionInput => descriptionInput ? true : console.log('') && false
-
+    verify: descriptionInput =>
+      descriptionInput ? true : console.log("") && false,
   },
   {
     when: function (response) {
@@ -74,8 +80,8 @@ const questions = [
     name: "skipTableOfContents",
     message: "Do you want to skip creating a Table of Contents?",
     default: true,
-    verify:TableOfContentsInput =>TableOfContentsInput ? true : console.log('Ok moving on!') && false
-    
+    verify: TableOfContentsInput =>
+      TableOfContentsInput ? true : console.log("Ok moving on!") && false,
   },
 
   {
@@ -83,7 +89,10 @@ const questions = [
     name: "installation",
     message:
       "Please include step by step instructions to install your project?",
-      verify: installationInput => installationInput ? true : console.log('Please enter your installation instructions.') && false
+    verify: installationInput =>
+      installationInput
+        ? true
+        : console.log("Please enter your installation instructions.") && false,
   },
   {
     type: "confirm",
@@ -91,15 +100,17 @@ const questions = [
     message:
       "Would you like to give a step by step written instruction for the user using your application?",
   },
-  { 
-    type: 'list',
-    name: 'instructions',
-    message: 'Please list instructions for using your application.', 
-    choices: ['1,', '2,', '3', '4', '5', '6', '7', '8', '9', '10'],
-    verify: usageInput => usageInput ? true : console.log('Please enter complete instructions.') && false
+  {
+    type: "list",
+    name: "instructions",
+    message: "Please list instructions for using your application.",
+    choices: ["1,", "2,", "3", "4", "5", "6", "7", "8", "9", "10"],
+    verify: usageInput =>
+      usageInput
+        ? true
+        : console.log("Please enter complete instructions.") && false,
   },
-  
-  
+
   {
     type: "confirm",
     name: "screenshot",
@@ -113,8 +124,9 @@ const questions = [
 
     type: "input",
     name: "screenshotHelp",
-    message:
-      "Yes, of course! Here is a helpful link that will provide step-by-step instructions on how to add a screenshot for your Mark Down Tutorial: https://www.wikihow.com/Add-a-Screenshot-to-a-Markdown-File?",
+    message: "Yes, of course! Here is a helpful link that will provide step-by-step instructions on how to add a screenshot for your Mark Down Tutorial: https://www.wikihow.com/Add-a-Screenshot-to-a-Markdown-File?"```md
+![alt text](assets/images/screenshot.png)
+```,
   },
 
   {
@@ -124,13 +136,44 @@ const questions = [
 
     type: "confirm",
     name: "skipScreenshot",
-    
+    message: "Ok moving on!",
+  },
+  
+  {
+    type: "input",
+    name: "Credits",
+    message: "List your Collaborators, if any,with links to their Github profiles.",
+    verify: nameInput =>
+      nameInput
+        ? true
+        : console.log("Please enter your collaborators,links, and link to any tutorials you followed as well.") && false,
   },
   {
     type: "list",
     name: "license",
     message: "what license?",
     choices: ["MIT", "Apache", "GPL", "BSD", "None"],
+  },
+  
+  {
+    type: "list",
+    name: "features",
+    message: "List your project's features.",
+    choices: [""],
+    verify: nameInput =>
+      nameInput
+        ? true
+        : console.log("List Projects Features") && false,
+  },
+  {
+    type: "input",
+    name: "contribute",
+    message: "add link and instructions how to contribute.",
+    
+    verify: nameInput =>
+      nameInput
+        ? true
+        : console.log("Instruct how to contribute") && false,
   },
 ];
 

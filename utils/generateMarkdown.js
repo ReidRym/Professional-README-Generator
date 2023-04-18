@@ -48,10 +48,19 @@ ${data.installation}
 ## Usage
 ${data.usage}
 
+## Credits
+${data.credits}
 
 ## license
 ${data.license}
 
+## Badges
+${data.badges}
+![badge](https://img.shields.io/badge/license-${license}-brightgreen)
+Get way more badges at [shields.io](https://shields.io)
+
+## Features  
+${data.features}
 
 ## Contributing
 ${data.contributing}
@@ -77,14 +86,10 @@ ${data.github}
 ${data.email}
 
 
-## Credits
-${data.credits}
 
 
-## Badges
-${data.badges}
-![badge](https://img.shields.io/badge/license-${license}-brightgreen)
-Get way more badges at [shields.io](https://shields.io)
+
+
 
 
 
