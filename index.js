@@ -95,16 +95,15 @@ const questions = [
         : console.log("Please enter your installation instructions.") && false,
   },
   {
-    type: "confirm",
+    type: "input",
     name: "usage",
     message:
       "Would you like to give a step by step written instruction for the user using your application?",
   },
   {
-    type: "list",
+    type: "input",
     name: "instructions",
     message: "Please list instructions for using your application.",
-    choices: ["1,", "2,", "3", "4", "5", "6", "7", "8", "9", "10"],
     verify: usageInput =>
       usageInput
         ? true
@@ -124,9 +123,11 @@ const questions = [
 
     type: "input",
     name: "screenshotHelp",
-    message: "Yes, of course! Here is a helpful link that will provide step-by-step instructions on how to add a screenshot for your Mark Down Tutorial: https://www.wikihow.com/Add-a-Screenshot-to-a-Markdown-File?"```md
-![alt text](assets/images/screenshot.png)
-```,
+    message: "Yes, of course! Here is a helpful link that will provide step-by-step instructions on how to add a screenshot for your Mark Down Tutorial: https://www.wikihow.com/Add-a-Screenshot-to-a-Markdown-File? or you can copy and paste the following code into your Mark Down Tutorial: ![alt text](assets/images/screenshot.png)"
+//     md
+
+// ![alt text](assets/images/screenshot.png)"
+// ,
   },
 
   {
@@ -141,7 +142,7 @@ const questions = [
   
   {
     type: "input",
-    name: "Credits",
+    name: "credits",
     message: "List your Collaborators, if any,with links to their Github profiles.",
     verify: nameInput =>
       nameInput
@@ -156,10 +157,10 @@ const questions = [
   },
   
   {
-    type: "list",
+    type: "input",
     name: "features",
     message: "List your project's features.",
-    choices: [""],
+    
     verify: nameInput =>
       nameInput
         ? true
@@ -167,13 +168,42 @@ const questions = [
   },
   {
     type: "input",
-    name: "contribute",
+    name: "contributing",
     message: "add link and instructions how to contribute.",
-    
     verify: nameInput =>
       nameInput
         ? true
         : console.log("Instruct how to contribute") && false,
+  },
+  {
+    type: "input",
+    name: "tests",
+    message: "Please include any test instructions.",
+    
+  },
+  {
+    type: "input",
+    name: "questions",
+    message: "List any questions you may have.",
+    
+  },
+  {
+    type: "input",
+    name: "contact",
+    message: "How can we contact you?",
+    
+  },
+  {
+    type: "input",
+    name: "github",
+    message: "add link to your GitHub account.",
+    
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "add a link to your email",
+    
   },
 ];
 
@@ -195,7 +225,7 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer.prompt(questions).then(data => {
     console.log(data);
-    writeToFile("README.md", data);
+    writeToFile("READMEfive.md", data);
   });
 }
 
