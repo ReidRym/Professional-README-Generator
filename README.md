@@ -1,51 +1,74 @@
-#
+# Poop skillet
+
+
 
 ## Description
+its about poop
 
 ## Table of Contents
+## Table of Contents
 
-false
+* [TITLE](#title)
+* [DESCRIPTION](#description)
+* [INSTALLATION](#installation)
+* [USAGE](#usage)
+* [CREDITS](#credits)
+* [BADGES](#badges)
+* [FEATURES](#features)
+* [CONTRIBUTING](#contributing)
+* [TESTS](#tests)
+* [QUESTIONS](#questions)
+* [CONTACT](#contact)
+* [GITHUB](#github)
+* [EMAIL](#email)
+
+
+
+
 
 ## Installation
+I dont know
 
-fds
 
 ## Usage
+not sure
 
-fsfsdf
 
 ## license
-
 MIT
 
+
 ## Contributing
-
 undefined
 
-## Tests
 
+## Tests  
 undefined
+
 
 ## Questions
-
 undefined
+
 
 ## Contact
-
 undefined
+
 
 ## GitHub
-
 undefined
+
 
 ## Email
-
 undefined
+
 
 ## Credits
-
 undefined
+
 
 ## Badges
-
 undefined
+
+
+
+

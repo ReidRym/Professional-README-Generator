@@ -31,6 +31,9 @@ function generateMarkdown(data) {
 
 ## Description
 ${data.description}
+![badge](https://img.shields.io/badge/license-${license}-brightgreen)
+
+You can access more badges and their purposes at [shields.io](https://shields.io)
 
 ## Table of Contents
 ${data.tableOfContents}
@@ -88,3 +91,4 @@ ${data.badges}
 }
 
 module.exports = generateMarkdown;
+

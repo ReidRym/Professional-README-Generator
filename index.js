@@ -8,18 +8,22 @@ const questions = [
   {
     type: "input",
     name: "title",
-    message: "What is the name of your project?",
+    message: "What is the name of your project? (Required)",
+    verify: nameInput => nameInput ? true : console.log('Please enter your project title.') && false
   },
   {
     type: "input",
     name: "description",
-    message: "Please provide a description of your project?",
+    message: "Please provide a detailed description of your project? (Required)",
+    verify: descriptionInput => descriptionInput ? true : console.log('Please enter your project description.') && false
   },
   {
     type: "confirm",
     name: "tableOfContents",
-    message: "Do you want to create a table of contents for your document?",
+    message: "Do you want to create a table of contents for your project?",
     default: true,
+    verify: descriptionInput => descriptionInput ? true : console.log('') && false
+
   },
   {
     when: function (response) {
@@ -69,6 +73,9 @@ const questions = [
     type: "confirm",
     name: "skipTableOfContents",
     message: "Do you want to skip creating a Table of Contents?",
+    default: true,
+    verify:TableOfContentsInput =>TableOfContentsInput ? true : console.log('Ok moving on!') && false
+    
   },
 
   {
@@ -107,8 +114,7 @@ const questions = [
 
     type: "confirm",
     name: "skipScreenshot",
-    // message:
-    //   "Do you want to skip adding a screenshot to your Mark Down Tutorial?",
+    
   },
   {
     type: "list",
