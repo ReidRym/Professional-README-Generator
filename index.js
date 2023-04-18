@@ -83,13 +83,23 @@ const questions = [
     name: "installation",
     message:
       "Please include step by step instructions to install your project?",
+      verify: installationInput => installationInput ? true : console.log('Please enter your installation instructions.') && false
   },
   {
-    type: "input",
+    type: "confirm",
     name: "usage",
     message:
-      "What steps should the user follow to use your project or application?",
+      "Would you like to give a step by step written instruction for the user using your application?",
   },
+  { 
+    type: 'list',
+    name: 'instructions',
+    message: 'Please list instructions for using your application.', 
+    choices: ['1,', '2,', '3', '4', '5', '6', '7', '8', '9', '10'],
+    verify: usageInput => usageInput ? true : console.log('Please enter complete instructions.') && false
+  },
+  
+  
   {
     type: "confirm",
     name: "screenshot",
