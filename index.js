@@ -98,7 +98,7 @@ const questions = [
     type: "input",
     name: "usage",
     message:
-      "Would you like to give a step by step written instruction for the user using your application?",
+      "Give the written for the user using your application?",
   },
   {
     type: "input",
@@ -124,10 +124,7 @@ const questions = [
     type: "input",
     name: "screenshotHelp",
     message: "Yes, of course! Here is a helpful link that will provide step-by-step instructions on how to add a screenshot for your Mark Down Tutorial: https://www.wikihow.com/Add-a-Screenshot-to-a-Markdown-File? or you can copy and paste the following code into your Mark Down Tutorial: ![alt text](assets/images/screenshot.png)"
-//     md
 
-// ![alt text](assets/images/screenshot.png)"
-// ,
   },
 
   {
@@ -147,7 +144,7 @@ const questions = [
     verify: nameInput =>
       nameInput
         ? true
-        : console.log("Please enter your collaborators,links, and link to any tutorials you followed as well.") && false,
+        : console.log("Please enter your collaborators,links, and link to any tutorials you have followed as well.") && false,
   },
   {
     type: "list",
@@ -169,7 +166,7 @@ const questions = [
   {
     type: "input",
     name: "contributing",
-    message: "add link and instructions how to contribute.",
+    message: "Add link and instructions. SO  other developers so they may contribute.",
     verify: nameInput =>
       nameInput
         ? true
@@ -178,7 +175,7 @@ const questions = [
   {
     type: "input",
     name: "tests",
-    message: "Please include any test instructions.",
+    message: "Please include any test instructions so a user will understand how to use your project.",
     
   },
   {
@@ -196,7 +193,7 @@ const questions = [
   {
     type: "input",
     name: "github",
-    message: "add link to your GitHub account.",
+    message: "add link to your GitHub account.(Required)",
     
   },
   {
@@ -224,7 +221,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
   inquirer.prompt(questions).then(data => {
-    console.log(data);
+    console.log(data,"You have successfully created your Mark Down Tutorial!");
     writeToFile("READMEfive.md", data);
   });
 }
