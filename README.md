@@ -36,6 +36,9 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 ## Usage 
 
+To watch a walkthrough video go to the link here
+https://drive.google.com/file/d/1PCx4xN96uJp8HGRB3xpRKdBgFzw3WVEC/view
+
 Provide instructions and examples for use. Include screenshots as needed.
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
