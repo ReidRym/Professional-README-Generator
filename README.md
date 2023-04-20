@@ -49,6 +49,8 @@ https://drive.google.com/file/d/1PCx4xN96uJp8HGRB3xpRKdBgFzw3WVEC/view
 
 ![5 README](https://user-images.githubusercontent.com/123789106/233228480-0fba61c1-473b-4719-b942-549f4647d7d9.JPG)
 
+![package json pix README](https://user-images.githubusercontent.com/123789106/233229336-ffd92081-4228-444e-bce9-274b653bb7b8.JPG)
+
 
 Provide instructions and examples for use. Include screenshots as needed.
 
